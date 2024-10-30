@@ -19,6 +19,17 @@
 
 factorial = 1
 
+while True:
+    upper_bound = input("Please enter a numeric upper bound: ")
+    if upper_bound.isnumeric():
+        upper_bound = int(upper_bound)
+        while upper_bound>0:
+            factorial = factorial*upper_bound
+            upper_bound = upper_bound-1
+        break
+    else:
+        print("Please enter valid number")
+
 print(f"The result of the factorial based on the given bound is {factorial}")
 
 print("*"*75)
@@ -38,7 +49,21 @@ print("*"*75)
 # The sum should start at 0 
 
 num_sum = 0 
-
+exit = "Exit"
+while True:
+    value = input("Please enter an integar, it can be negative or positive, or exit program: ")
+    if "-" in value:
+        value=value.replace("-","")
+        if value.isnumeric():
+            num_sum = num_sum - int(value)
+        else:
+            value = input("Please only enter numeric values: ")
+    elif value.isnumeric():
+        num_sum = num_sum + int(value)
+    elif value.upper() == exit.upper():
+        break
+    else:
+        value = "Please only enter integars: "
 print(f"Your final sum is {num_sum}")
 
 print("*"*75)
@@ -59,4 +84,45 @@ print("*"*75)
 # Print the result of the equation
 # Again, loop through prompting the user for input until `exit` in any casing is input 
 
-        
+while True:
+    eq = input("Please input an equation in the form: operand operator operand. Enter exit if you would like to stop program: ")
+    eq = eq.replace(" ","")
+    if "+" in eq:
+        values = eq.split("+")
+        if values[0].isnumeric() and values[1].isnumeric():
+            sum = int(values[0])+int(values[1])
+            print(sum)
+        else:
+            print("Please choose valid numbers")
+    elif "-" in eq:
+        values = eq.split("-")
+        if values[0].isnumeric() and values[1].isnumeric():
+            sum = int(values[0])-int(values[1])
+            print(sum)
+        else:
+            print("Please choose valid numbers")
+    elif "*" in eq:
+        values = eq.split("*")
+        if values[0].isnumeric() and values[1].isnumeric():
+            sum = int(values[0])*int(values[1])
+            print(sum)
+        else:
+            print("Please choose valid numbers")
+    elif "/" in eq:
+        values = eq.split("/")
+        if values[0].isnumeric() and values[1].isnumeric():
+            sum = int(values[0])/int(values[1])
+            print(sum)
+        else:
+            print("Please choose valid numbers")
+    elif "%" in eq:
+        values = eq.split("%")
+        if values[0].isnumeric() and values[1].isnumeric():
+            sum = int(values[0])%int(values[1])
+            print(sum)
+        else:
+            print("Please choose valid numbers")
+    elif eq.upper() == exit.upper():
+        break
+    else:
+        print("Please enter a valid equation")
