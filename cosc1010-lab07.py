@@ -1,12 +1,10 @@
-# Your Name Here
+# Adrianna Francone
 # UWYO COSC 1010
-# Submission Date
-# Lab XX
-# Lab Section: 
-# Sources, people worked with, help given to: 
-# your
-# comments
-# here
+# 10/30/2024
+# Lab 07
+# Lab Section:15 
+# Sources, people worked with, help given to: Lecture Slides
+
 
 
 # Prompt the user for an upper bound 
